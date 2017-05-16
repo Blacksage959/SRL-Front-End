@@ -33,12 +33,32 @@ export default class NRole extends React.PureComponent {
     const logoBttn={
       height:"auto",
       width:"auto",
+      fontFamily:"Lato",
+      letterSpacing:".4em",
+      fontSize:"1.5em",
+      backgroundColor:"#555",
+      paddingLeft:"5px"
 
     }
     const find={
       height:"20%"
     }
+    const input={
+      height:"auto",
+      width:"auto",
+      backgroundColor:"rgba(220,255,220,1)",
+      marginBottom:"3%",
+      marginTop:"3%",
+      border:"1px solid green",
+      adding:"10",
+      overflow:"scroll",
+    }
 
+    const row={
+      display:"flex",
+      flexDirection:"column",
+      padding:"20px",
+    }
 
     return (
       <div>
@@ -50,6 +70,11 @@ export default class NRole extends React.PureComponent {
           <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/roles")}> NEW ROLE - </FlatButton>
 
         </div>
+        </div>
+
+        <div style={row}>
+          <input style={input} type="text" placeholder="Role Name"/>
+          <input style={input} type="submit"/>
         </div>
 
       </div>

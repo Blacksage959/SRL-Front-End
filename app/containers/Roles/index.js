@@ -46,7 +46,22 @@ export default class Roles extends React.PureComponent {
     const logoBttn={
       height:"auto",
       width:"auto",
-
+      fontFamily:"Lato",
+      letterSpacing:".8em",
+      fontSize:"1.5em",
+      backgroundColor:"#555",
+      paddingLeft:"5px"
+    }
+    const bttn={
+      height:"auto",
+      width:"auto",
+      fontFamily:"Lato",
+      letterSpacing:".6em",
+      fontSize:"1em",
+      backgroundColor:"#555",
+      paddingLeft:"5px",
+      top:"-20px",
+      marginLeft:"5px",
     }
     const newFind={
       height:"20%"
@@ -59,12 +74,12 @@ export default class Roles extends React.PureComponent {
         <div style={env}>
           <div style={header}>
             <div style={logo}>
-              <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/admindash")}> ROLES - </FlatButton>
+              <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/admindash")}> ROLES- </FlatButton>
             </div>
 
             <div style={newFind}>
-              <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/nrole")}> NEW +</FlatButton>
-              <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/frole")}> FIND +</FlatButton>
+              <FlatButton style={bttn} onTouchTap={()=> this.handleNav("/nrole")}> NEW+</FlatButton>
+              <FlatButton style={bttn} onTouchTap={()=> this.handleNav("/frole")}> FIND+</FlatButton>
             </div>
 
           </div>

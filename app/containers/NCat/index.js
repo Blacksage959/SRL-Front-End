@@ -32,12 +32,31 @@ export default class NCat extends React.PureComponent {
     const logoBttn={
       height:"auto",
       width:"auto",
+      fontFamily:"Lato",
+      letterSpacing:".4em",
+      fontSize:"1em",
+      backgroundColor:"#555",
+      paddingLeft:"5px"
 
     }
     const find={
       height:"20%"
     }
-
+    const row={
+      display:"flex",
+      flexDirection:"column",
+      padding:"20px",
+    }
+    const input={
+      height:"auto",
+      width:"auto",
+      backgroundColor:"rgba(220,255,220,1)",
+      marginBottom:"3%",
+      marginTop:"3%",
+      border:"1px solid green",
+      adding:"10",
+      overflow:"scroll",
+    }
 
     return (
       <div>
@@ -49,6 +68,11 @@ export default class NCat extends React.PureComponent {
               <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/categories")}> NEW CATEGORY - </FlatButton>
 
             </div>
+          </div>
+
+          <div style={row}>
+            <input style={input}  type="text" placeholder="Category Name"/>
+            <input style={input} type="submit"/>
           </div>
 
       </div>

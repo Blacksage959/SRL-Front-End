@@ -33,12 +33,31 @@ export default class FProd extends React.PureComponent {
     const logoBttn={
       height:"auto",
       width:"auto",
-
+      fontFamily:"Lato",
+      letterSpacing:".4em",
+      fontSize:"1.2em",
+      backgroundColor:"#555",
+      paddingLeft:"5px"
     }
     const find={
       height:"20%"
     }
+    const row={
+      display:"flex",
+      flexDirection:"column",
+      padding:"20px",
+    }
 
+    const input={
+      height:"auto",
+      width:"auto",
+      backgroundColor:"rgba(220,255,220,1)",
+      marginBottom:"3%",
+      marginTop:"3%",
+      border:"1px solid green",
+      adding:"10",
+      overflow:"scroll",
+    }
     return (
       <div>
         <Helmet title="FProd" meta={[ { name: 'description', content: 'Description of FProd' }]}/>
@@ -49,6 +68,14 @@ export default class FProd extends React.PureComponent {
               <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/products")}> FIND PRODUCT - </FlatButton>
 
             </div>
+          </div>
+
+          <div style={row}>
+          <input style={input} type="text" placeholder="Product ID"/>
+          <input style={input} type="text" placeholder="Product Name"/>
+
+
+          <input style={input} placeholder={find} type="submit"/>
           </div>
 
       </div>

@@ -45,6 +45,22 @@ export default class Categories extends React.PureComponent {
     const logoBttn={
       height:"auto",
       width:"auto",
+      fontFamily:"Lato",
+      letterSpacing:".4em",
+      fontSize:"1.5em",
+      backgroundColor:"#555",
+      paddingLeft:"5px"
+    }
+    const bttn={
+      height:"auto",
+      width:"auto",
+      fontFamily:"Lato",
+      letterSpacing:".6em",
+      fontSize:"1em",
+      backgroundColor:"#555",
+      paddingLeft:"5px",
+      top:"-20px",
+      marginLeft:"5px",
 
     }
     const newFind={
@@ -61,12 +77,12 @@ export default class Categories extends React.PureComponent {
         <div style={env}>
           <div style={header}>
             <div style={logo}>
-              <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/admindash")}> CATEGORIES - </FlatButton>
+              <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/admindash")}> CATEGORIES- </FlatButton>
             </div>
 
             <div style={newFind}>
-              <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/ncat")}> NEW +</FlatButton>
-              <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/fcat")}> FIND +</FlatButton>
+              <FlatButton style={bttn} onTouchTap={()=> this.handleNav("/ncat")}> NEW+</FlatButton>
+              <FlatButton style={bttn} onTouchTap={()=> this.handleNav("/fcat")}> FIND+</FlatButton>
             </div>
 
             <div style={remainder}></div>

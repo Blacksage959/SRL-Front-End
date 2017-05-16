@@ -37,13 +37,32 @@ export default class Orders extends React.PureComponent {
       width:"100%",
       height:"15vh",
       backgroundColor:"#999",
+
     }
     const logo={
-      height:"80%"
+      height:"80%",
+      fontFamily:"Amatic SC",
+
     }
     const logoBttn={
       height:"auto",
       width:"auto",
+      fontFamily:"Lato",
+      letterSpacing:".8em",
+      fontSize:"1.5em",
+      backgroundColor:"#555",
+      paddingLeft:"5px"
+    }
+    const bttn={
+      height:"auto",
+      width:"auto",
+      fontFamily:"Lato",
+      letterSpacing:".6em",
+      fontSize:"1em",
+      backgroundColor:"#555",
+      paddingLeft:"5px",
+      top:"-20px",
+      marginLeft:"5px",
 
     }
     const find={
@@ -57,11 +76,11 @@ export default class Orders extends React.PureComponent {
           <div style={header}>
 
             <div style={logo}>
-                <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/admindash")}> ORDERS - </FlatButton>
+                <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/admindash")}> ORDERS- </FlatButton>
             </div>
 
             <div style={find}>
-              <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/forder")}> FIND +</FlatButton>
+              <FlatButton style={bttn} onTouchTap={()=> this.handleNav("/forder")}> FIND+</FlatButton>
             </div>
 
           </div>

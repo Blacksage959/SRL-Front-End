@@ -38,17 +38,38 @@ export default class Users extends React.PureComponent {
       width:"100%",
       height:"15vh",
       backgroundColor:"#999",
+
     }
     const logo={
-      height:"80%"
+      height:"80%",
+
     }
     const logoBttn={
       height:"auto",
       width:"auto",
+      fontFamily:"Lato",
+      letterSpacing:".8em",
+      fontSize:"1.5em",
+    backgroundColor:"#555",
+    paddingLeft:"5px"
+
+
+    }
+    const bttn={
+      height:"auto",
+      width:"auto",
+      fontFamily:"Lato",
+      letterSpacing:".6em",
+      fontSize:"1em",
+      backgroundColor:"#555",
+      paddingLeft:"5px",
+      top:"-20px",
+      marginLeft:"5px",
 
     }
     const find={
-      height:"20%"
+      height:"20%",
+
     }
 
     return (
@@ -58,11 +79,11 @@ export default class Users extends React.PureComponent {
       <div style={env}>
         <div style={header}>
           <div style={logo}>
-            <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/admindash")}> USERS - </FlatButton>
+            <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/admindash")}> USERS- </FlatButton>
           </div>
 
           <div style={find}>
-            <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/fuser")}> FIND +</FlatButton>
+            <FlatButton style={bttn} onTouchTap={()=> this.handleNav("/fuser")}> FIND+</FlatButton>
           </div>
 
         </div>

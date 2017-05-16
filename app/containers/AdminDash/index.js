@@ -23,6 +23,9 @@ export default class AdminDash extends React.PureComponent {
     const admBox={
       height:"20vh",
       width:"100%",
+      fontFamily:"Lato",
+      fontSize:"2.5em",
+      fontType:"bold",
 }
 
     return (

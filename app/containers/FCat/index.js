@@ -32,12 +32,33 @@ export default class FCat extends React.PureComponent {
     const logoBttn={
       height:"auto",
       width:"auto",
+      fontFamily:"Lato",
+      letterSpacing:".4em",
+      fontSize:"1em",
+      backgroundColor:"#555",
+      paddingLeft:"5px"
 
     }
     const find={
       height:"20%"
     }
 
+    const input={
+      height:"auto",
+      width:"auto",
+      backgroundColor:"rgba(220,255,220,1)",
+      marginBottom:"3%",
+      marginTop:"3%",
+      border:"1px solid green",
+      adding:"10",
+      overflow:"scroll",
+    }
+
+    const row={
+      display:"flex",
+      flexDirection:"column",
+      padding:"20px",
+    }
 
     return (
       <div>
@@ -51,6 +72,12 @@ export default class FCat extends React.PureComponent {
             </div>
           </div>
 
+          <div style={row}>
+          <input style={input} type="text" placeholder="Product Name"/>
+          <input style={input} type="text" placeholder="CategoryID"/>
+          <input style={input} type="submit"/>
+          </div>
+          
       </div>
     );
   }

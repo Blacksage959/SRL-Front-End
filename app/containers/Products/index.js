@@ -45,10 +45,27 @@ export default class Products extends React.PureComponent {
     const logoBttn={
       height:"auto",
       width:"auto",
-
+      fontFamily:"Lato",
+      letterSpacing:".6em",
+      fontSize:"1.5em",
+    backgroundColor:"#555",
+    paddingLeft:"5px"
     }
+    const bttn={
+      height:"auto",
+      width:"auto",
+      fontFamily:"Lato",
+      letterSpacing:".6em",
+      fontSize:"1em",
+    backgroundColor:"#555",
+    paddingLeft:"5px",
+    top:"-20px",
+    marginLeft:"5px",
+    }
+
     const newFind={
-      height:"20%"
+      height:"20%",
+
     }
     return (
       <div>
@@ -57,12 +74,12 @@ export default class Products extends React.PureComponent {
         <div style={env}>
           <div style={header}>
             <div style={logo}>
-              <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/admindash")}> PRODUCTS - </FlatButton>
+              <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/admindash")}> PRODUCTS- </FlatButton>
             </div>
 
             <div style={newFind}>
-              <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/nprod")}> NEW +</FlatButton>
-              <FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/fprod")}> FIND +</FlatButton>
+              <FlatButton style={bttn} onTouchTap={()=> this.handleNav("/nprod")}> NEW+</FlatButton>
+              <FlatButton style={bttn} onTouchTap={()=> this.handleNav("/fprod")}> FIND+</FlatButton>
             </div>
 
           </div>
