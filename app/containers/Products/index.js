@@ -27,7 +27,7 @@ export default class Products extends React.PureComponent {
 
 
   componentWillMount(){
-    fetch("http://localhost:3000/api/getProducts?token=" + this.state.token, {
+    fetch("http://localhost:8000/api/getProducts?token=" + this.state.token, {
       header:{
         "Authorization":"Bearer " + this.state.token
       }
@@ -37,7 +37,7 @@ export default class Products extends React.PureComponent {
     })
     .then(function(json){
       this.setState({
-        posts:json
+        products:json
       })
     }.bind(this))
 
@@ -101,6 +101,15 @@ export default class Products extends React.PureComponent {
             </div>
 
           </div>
+
+          <div style={env}>
+            {this.state.products.map((name, index) => (
+              <div>
+                <p>{product.name}</p>
+              </div>
+            ))}
+          </div>
+
         </div>
 
       </div>

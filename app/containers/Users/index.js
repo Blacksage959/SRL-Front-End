@@ -26,7 +26,7 @@ export default class Users extends React.PureComponent {
 
 
   componentWillMount(){
-    fetch("http://localhost:3000/api/getUsers?token=" + this.state.token, {
+    fetch("http://localhost:8000/api/getUsers?token=" + this.state.token, {
       header:{
         "Authorization":"Bearer " + this.state.token
       }
@@ -36,7 +36,7 @@ export default class Users extends React.PureComponent {
     })
     .then(function(json){
       this.setState({
-        posts:json
+        users:json
       })
     }.bind(this))
 
@@ -101,6 +101,14 @@ export default class Users extends React.PureComponent {
 
           <div style={find}>
             <FlatButton style={bttn} onTouchTap={()=> this.handleNav("/fuser")}> FIND+</FlatButton>
+          </div>
+
+          <div style={env}>
+            {this.state.users.map((name, index) => (
+              <div>
+                <p>{users.name}</p>
+              </div>
+            ))}
           </div>
 
         </div>

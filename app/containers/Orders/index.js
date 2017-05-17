@@ -26,7 +26,7 @@ export default class Orders extends React.PureComponent {
 
 
   componentWillMount(){
-    fetch("http://localhost:3000/api/getOrders?token=" + this.state.token, {
+    fetch("http://localhost:8000/api/getOrders?token=" + this.state.token, {
       header:{
         "Authorization":"Bearer " + this.state.token
       }
@@ -36,7 +36,7 @@ export default class Orders extends React.PureComponent {
     })
     .then(function(json){
       this.setState({
-        posts:json
+        orders:json
       })
     }.bind(this))
 
@@ -102,6 +102,15 @@ export default class Orders extends React.PureComponent {
             </div>
 
           </div>
+
+          <div style={env}>
+            {this.state.orders.map((name, index) => (
+              <div>
+                <p>{order.name}</p>
+              </div>
+            ))}
+          </div>
+
         </div>
 
       </div>

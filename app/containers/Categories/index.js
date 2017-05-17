@@ -23,7 +23,7 @@ export default class Categories extends React.PureComponent {
 
 
   componentWillMount(){
-    fetch("http://localhost:3000/api/getCategories?token=" + this.state.token, {
+    fetch("http://localhost:8000/api/getCategories?token=" + this.state.token, {
       header:{
         "Authorization":"Bearer " + this.state.token
       }
@@ -33,7 +33,7 @@ export default class Categories extends React.PureComponent {
     })
     .then(function(json){
       this.setState({
-        posts:json
+        categories:json
       })
     }.bind(this))
 
@@ -99,8 +99,17 @@ export default class Categories extends React.PureComponent {
               <FlatButton style={bttn} onTouchTap={()=> this.handleNav("/fcat")}> FIND+</FlatButton>
             </div>
 
-            <div style={remainder}></div>
           </div>
+
+          <div style={env}>
+            {this.state.categories.map((name, index) => (
+              <div>
+                <p>{categorie.name}</p>
+              </div>
+            ))}
+          </div>
+
+
         </div>
 
       </div>

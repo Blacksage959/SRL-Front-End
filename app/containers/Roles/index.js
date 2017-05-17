@@ -16,7 +16,7 @@ constructor(props){
   super(props);
   this.state ={
     roles:[],
-    name:[""],
+    name:"",
     token:sessionStorage.getItem("token"),
   }
 }
