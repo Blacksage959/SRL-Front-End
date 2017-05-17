@@ -102,9 +102,9 @@ export default class Categories extends React.PureComponent {
           </div>
 
           <div style={env}>
-            {this.state.categories.map((name, index) => (
+            {this.state.categories.map((category, index) => (
               <div>
-                <p>{categorie.name}</p>
+                <p>{category.name}</p>
               </div>
             ))}
           </div>

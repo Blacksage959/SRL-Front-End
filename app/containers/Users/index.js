@@ -104,9 +104,9 @@ export default class Users extends React.PureComponent {
           </div>
 
           <div style={env}>
-            {this.state.users.map((name, index) => (
+            {this.state.users.map((user, index) => (
               <div>
-                <p>{users.name}</p>
+                <p>{user.name}</p>
               </div>
             ))}
           </div>

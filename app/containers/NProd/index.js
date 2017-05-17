@@ -14,14 +14,23 @@ export default class NProd extends React.PureComponent {
   constructor(props){
   super(props);
   this.state ={
-
-    image:"",
-    preview:"",
-
-   }
+    name:"",
+    images:"",
+    price:"",
+    description:"",
+    categoryID:"",
+    availability:"",
+    }
   }
 
-  handleImage = (event) => {
+
+  handleName = (event) => {
+    this.setState({
+      name:event.target.value
+    })
+  }
+
+  handleImages = (event) => {
     event.preventDefault();
 
     let reader = new FileReader();
@@ -29,7 +38,7 @@ export default class NProd extends React.PureComponent {
 
     reader.onloadend= () => {
       this.setState({
-        image:file,
+        images:file,
         preview: reader.result
       })
     }
@@ -37,6 +46,59 @@ export default class NProd extends React.PureComponent {
     reader.readAsDataURL(file);
   }
 
+  handlePrice = (event) => {
+    this.setState({
+      price:event.target.value
+    })
+  }
+
+  handleDescription = (event) => {
+    this.setState({
+      description:event.target.value
+    })
+  }
+
+  handleCategoryID = (event) => {
+    this.setState({
+      categoryID:event.target.value
+    })
+  }
+
+  handleAvailability = (event) => {
+    this.setState({
+      availability:event.target.value
+    })
+  }
+
+
+  storeProduct = () => {
+    var data = new FormData();
+    data.append("name",this.state.name);
+    data.append("images",this.state.images);
+    data.append("price",this.state.price);
+    data.append("description",this.state.description);
+    data.append("categoryID",this.state.categoryID);
+    data.append("availability",this.state.availability);
+
+
+    fetch("http://localhost:8000/api/storeProduct",{
+      method:"post",
+      body:data
+
+    })
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(json) {
+      if(json.success) {
+        alert(json.success);
+
+      }
+    else if(json.error) {
+      alert(json.error);
+     }
+    })
+  }
 
 
   handleNav = (location) => {
@@ -108,13 +170,14 @@ export default class NProd extends React.PureComponent {
 
           <div style={row}>
 
-            <input style={input} type="text" placeholder="Product Name"/>
-            <input style={input} type="text" placeholder="CategoryID"/>
-            <input style={input} type="text" placeholder="Price"/>
-            <input style={input} type="text" placeholder="Description"/>
-            <input style={input} onChange={this.handleImage} type="file"/>
+            <input style={input} onChange={this.handleName} type="text" placeholder="Product Name"/>
+            <input style={input} onChange={this.handleCategoryID} type="text" placeholder="CategoryID"/>
+            <input style={input} onChange={this.handlePrice} type="text" placeholder="Price"/>
+            <input style={input} onChange={this.handleDescription} type="text" placeholder="Description"/>
+            <input style={input} onChange={this.handleAvailability} type="text" placeholder="Availability"/>
+            <input style={input} onChange={this.handleImages} type="file"/>
             <img style={imgCons} src={this.state.preview}/>
-            <input style={input} type="submit"/>
+            <input style={input} onTouchTap={this.storeProduct} type="submit"/>
 
           </div>
 

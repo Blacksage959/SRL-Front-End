@@ -11,6 +11,48 @@ import {Link} from "react-router";
 
 export default class NRole extends React.PureComponent {
 
+
+  constructor(props){
+  super(props);
+  this.state ={
+    name:"",
+
+   }
+  }
+
+  handleName = (event) => {
+    this.setState({
+      name:event.target.value
+    })
+  }
+
+
+  storeRole = () => {
+    var data = new FormData();
+    data.append("name",this.state.name);
+
+
+    fetch("http://localhost:8000/api/storeRole",{
+      method:"post",
+      body:data
+
+    })
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(json) {
+      if(json.success) {
+        alert(json.success);
+
+      }
+    else if(json.error) {
+      alert(json.error);
+     }
+    })
+  }
+
+
+
   handleNav = (location) => {
     this.context.router.push(location);
   }
@@ -73,8 +115,8 @@ export default class NRole extends React.PureComponent {
         </div>
 
         <div style={row}>
-          <input style={input} type="text" placeholder="Role Name"/>
-          <input style={input} type="submit"/>
+          <input style={input} onChange={this.handleName} type="text" placeholder="Role Name"/>
+          <input style={input} onTouchTap={this.storeRole} type="submit"/>
         </div>
 
       </div>

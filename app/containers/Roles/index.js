@@ -31,10 +31,12 @@ constructor(props){
       return response.json();
     })
     .then(function(json){
+      console.log(json);
       this.setState({
         roles:json
       })
   }.bind(this))
+
 }
 
   handleNav = (location) => {
@@ -43,10 +45,11 @@ constructor(props){
 
   render() {
     const env={
-      height:"100%",
+      height:"100vh",
       width:"100%",
-      backgroundColor:"#999",
+
     }
+
     const header={
       width:"100%",
       height:"15vh",
@@ -97,10 +100,10 @@ constructor(props){
 
           </div>
 
-          <div style={env}>
-            {this.state.roles.map((name, index) => (
+          <div>
+            {this.state.roles.map((role, index) => (
               <div>
-                <p>{role.name}</p>
+                <p>{role.id}{role.name}</p>
               </div>
             ))}
           </div>

@@ -104,9 +104,9 @@ export default class Orders extends React.PureComponent {
           </div>
 
           <div style={env}>
-            {this.state.orders.map((name, index) => (
+            {this.state.orders.map((order, index) => (
               <div>
-                <p>{order.name}</p>
+                <p>{order.id}</p>
               </div>
             ))}
           </div>

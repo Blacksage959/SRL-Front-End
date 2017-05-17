@@ -103,7 +103,7 @@ export default class Products extends React.PureComponent {
           </div>
 
           <div style={env}>
-            {this.state.products.map((name, index) => (
+            {this.state.products.map((product, index) => (
               <div>
                 <p>{product.name}</p>
               </div>
