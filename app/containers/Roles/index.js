@@ -12,18 +12,30 @@ import {Link} from "react-router";
 export default class Roles extends React.PureComponent {
 
 
+constructor(props){
+  super(props);
+  this.state ={
+    roles:[],
+    name:[""],
+    token:sessionStorage.getItem("token"),
+  }
+}
+
   componentWillMount(){
-    fetch("http://localhost:3000/api/getRoles")
+    fetch("http://localhost:8000/api/getRoles?token=" + this.state.token, {
+      header:{
+        "Authorization":"Bearer " + this.state.token
+      }
+    })
     .then(function(response){
       return response.json();
     })
     .then(function(json){
       this.setState({
-        posts:json
+        roles:json
       })
-    }.bind(this))
-
-  }
+  }.bind(this))
+}
 
   handleNav = (location) => {
     this.context.router.push(location);
@@ -33,6 +45,7 @@ export default class Roles extends React.PureComponent {
     const env={
       height:"100%",
       width:"100%",
+      backgroundColor:"#999",
     }
     const header={
       width:"100%",
@@ -83,6 +96,16 @@ export default class Roles extends React.PureComponent {
             </div>
 
           </div>
+
+          <div style={env}>
+            {this.state.roles.map((name, index) => (
+              <div>
+                <p>{role.name}</p>
+              </div>
+            ))}
+          </div>
+
+
         </div>
 
       </div>

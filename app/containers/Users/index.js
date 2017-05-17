@@ -11,9 +11,26 @@ import {Link} from "react-router";
 
 export default class Users extends React.PureComponent {
 
+  constructor(props){
+    super(props);
+    this.state ={
+      users:[],
+      name:"",
+      name:"email",
+      name:"password",
+      name:"roleID",
+      token:sessionStorage.getItem("token"),
+    }
+  }
+
+
 
   componentWillMount(){
-    fetch("http://localhost:3000/api/getUsers")
+    fetch("http://localhost:3000/api/getUsers?token=" + this.state.token, {
+      header:{
+        "Authorization":"Bearer " + this.state.token
+      }
+    })
     .then(function(response){
       return response.json();
     })

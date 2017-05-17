@@ -8,6 +8,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import FlatButton from 'material-ui/FlatButton';
 import {Link} from "react-router";
+import Edit from 'material-ui/svg-icons/image/edit';
 
 export default class AdminDash extends React.PureComponent {
 
@@ -26,7 +27,12 @@ export default class AdminDash extends React.PureComponent {
       fontFamily:"Lato",
       fontSize:"2.5em",
       fontType:"bold",
+      alignText:"center",
+
 }
+
+
+
 
     return (
       <div>

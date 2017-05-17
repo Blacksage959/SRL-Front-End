@@ -11,9 +11,27 @@ import {Link} from "react-router";
 
 export default class Products extends React.PureComponent {
 
+  constructor(props){
+    super(props);
+    this.state ={
+      products:[],
+      name:"",
+      images:"",
+      price:"",
+      description:"",
+      categoryID:"",
+      availability:"",
+      token:sessionStorage.getItem("token"),
+    }
+  }
+
 
   componentWillMount(){
-    fetch("http://localhost:3000/api/getProducts")
+    fetch("http://localhost:3000/api/getProducts?token=" + this.state.token, {
+      header:{
+        "Authorization":"Bearer " + this.state.token
+      }
+    })
     .then(function(response){
       return response.json();
     })

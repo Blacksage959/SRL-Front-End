@@ -53,7 +53,7 @@ export default class FOrder extends React.PureComponent {
       marginTop:"3%",
       border:"1px solid green",
       adding:"10",
-      overflow:"scroll",
+      
     }
 
     const row={
@@ -61,7 +61,7 @@ export default class FOrder extends React.PureComponent {
       flexDirection:"column",
       padding:"20px",
     }
-    
+
     return (
       <div>
         <Helmet title="FOrder" meta={[ { name: 'description', content: 'Description of FOrder' }]}/>
@@ -75,12 +75,12 @@ export default class FOrder extends React.PureComponent {
           </div>
 
           <div style={row}>
-          <input style={input} type="text" placeholder="ID"/>
+          <input style={input} type="text" placeholder="Order ID"/>
           <input style={input} type="text" placeholder="Users ID"/>
           <input style={input} type="text" placeholder="Product ID"/>
 
 
-          <input style={input} placeholder={find} type="submit"/>
+          <input style={input} type="submit"/>
           </div>
 
       </div>

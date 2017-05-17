@@ -174,6 +174,32 @@ export default function createRoutes() {
 
 
 
+                  {
+                   path: '/signin',
+                   name: 'signin',
+                   getComponent(nextState, comMod) {
+                     import('containers/SignIn')
+                       .then(loadModule(comMod))
+                       .catch(errorLoading);
+                   },
+                  },
+                  {
+                   path: '/signup',
+                   name: 'signup',
+                   getComponent(nextState, comMod) {
+                     import('containers/SignUp')
+                       .then(loadModule(comMod))
+                       .catch(errorLoading);
+                   },
+                  },
+
+
+
+
+
+
+
+
             {
                    path: '*',
                    name: 'notfound',

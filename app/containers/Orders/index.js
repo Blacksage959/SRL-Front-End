@@ -11,8 +11,26 @@ import {Link} from "react-router";
 
 export default class Orders extends React.PureComponent {
 
+  constructor(props){
+    super(props);
+    this.state ={
+      orders:[],
+      userID:"",
+      productID:"",
+      amount:"",
+      totalPrice:"",
+      comment:"",
+      token:sessionStorage.getItem("token"),
+    }
+  }
+
+
   componentWillMount(){
-    fetch("http://localhost:3000/api/getOrders")
+    fetch("http://localhost:3000/api/getOrders?token=" + this.state.token, {
+      header:{
+        "Authorization":"Bearer " + this.state.token
+      }
+    })
     .then(function(response){
       return response.json();
     })
