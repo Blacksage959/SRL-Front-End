@@ -55,6 +55,15 @@ export default function createRoutes() {
         .catch(errorLoading);
     },
    },
+   {
+    path: '/suser/:id',
+    name: 'suser',
+    getComponent(nextState, comMod) {
+      import('containers/SUser')
+        .then(loadModule(comMod))
+        .catch(errorLoading);
+    },
+   },
 
 
 
@@ -74,6 +83,15 @@ export default function createRoutes() {
                name: 'findorder',
                getComponent(nextState, comMod) {
                  import('containers/FOrder')
+                   .then(loadModule(comMod))
+                   .catch(errorLoading);
+               },
+              },
+              {
+               path: '/sorder/:id',
+               name: 'sorder',
+               getComponent(nextState, comMod) {
+                 import('containers/SOrder')
                    .then(loadModule(comMod))
                    .catch(errorLoading);
                },
@@ -109,7 +127,15 @@ export default function createRoutes() {
       .catch(errorLoading);
   },
  },
-
+ {
+  path: '/sprod/:id',
+  name: 'sprod',
+  getComponent(nextState, comMod) {
+    import('containers/SProd')
+      .then(loadModule(comMod))
+      .catch(errorLoading);
+  },
+ },
 
 
 
@@ -136,6 +162,15 @@ export default function createRoutes() {
                name: 'findrole',
                getComponent(nextState, comMod) {
                  import('containers/FRole')
+                   .then(loadModule(comMod))
+                   .catch(errorLoading);
+               },
+              },
+              {
+               path: '/srole/:id',
+               name: 'srole',
+               getComponent(nextState, comMod) {
+                 import('containers/SRole')
                    .then(loadModule(comMod))
                    .catch(errorLoading);
                },
@@ -167,6 +202,16 @@ export default function createRoutes() {
  name: 'findcategory',
  getComponent(nextState, comMod) {
    import('containers/FCat')
+     .then(loadModule(comMod))
+     .catch(errorLoading);
+ },
+},
+
+{
+ path: '/scat/:id',
+ name: 'scat',
+ getComponent(nextState, comMod) {
+   import('containers/SCat')
      .then(loadModule(comMod))
      .catch(errorLoading);
  },

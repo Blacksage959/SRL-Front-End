@@ -8,6 +8,9 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import FlatButton from 'material-ui/FlatButton';
 import {Link} from "react-router";
+import EditIcon from 'material-ui/svg-icons/image/edit';
+import AddIcon from 'material-ui/svg-icons/content/add';
+import DeleteIcon from 'material-ui/svg-icons/action/delete';
 
 export default class Orders extends React.PureComponent {
 
@@ -106,7 +109,10 @@ export default class Orders extends React.PureComponent {
           <div style={env}>
             {this.state.orders.map((order, index) => (
               <div>
-                <p>{order.id}</p>
+                <p>
+                  {order.id}{order.totalPrice}
+                  <Link to={`/sorder/${order.id}`}><AddIcon color="#99999" hoverColor="rgba(20,192,11,1)"/></Link>
+                </p>
               </div>
             ))}
           </div>

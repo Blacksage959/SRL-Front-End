@@ -8,6 +8,9 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import FlatButton from 'material-ui/FlatButton';
 import {Link} from "react-router";
+import EditIcon from 'material-ui/svg-icons/image/edit';
+import AddIcon from 'material-ui/svg-icons/content/add';
+import DeleteIcon from 'material-ui/svg-icons/action/delete';
 
 export default class Products extends React.PureComponent {
 
@@ -46,6 +49,7 @@ export default class Products extends React.PureComponent {
   handleNav = (location) => {
     this.context.router.push(location);
   }
+
 
   render() {
     const env={
@@ -105,7 +109,12 @@ export default class Products extends React.PureComponent {
           <div style={env}>
             {this.state.products.map((product, index) => (
               <div>
-                <p>{product.name}</p>
+                <p>
+                  {product.id}{product.name}
+                  <Link to={`sprod/${product.id}`}><AddIcon color="#99999" hoverColor="rgba(20,192,11,1)"/></Link>
+                  <Link to={`sprod/${product.id}`}><EditIcon color="#99999" hoverColor="rgba(20,192,11,1)"/></Link>
+                  <DeleteIcon color="#99999" hoverColor="rgba(20,192,11,1)"/>
+                </p>
               </div>
             ))}
           </div>

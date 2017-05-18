@@ -8,6 +8,9 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import FlatButton from 'material-ui/FlatButton';
 import {Link} from "react-router";
+import EditIcon from 'material-ui/svg-icons/image/edit';
+import AddIcon from 'material-ui/svg-icons/content/add';
+import DeleteIcon from 'material-ui/svg-icons/action/delete';
 
 export default class Users extends React.PureComponent {
 
@@ -16,9 +19,9 @@ export default class Users extends React.PureComponent {
     this.state ={
       users:[],
       name:"",
-      name:"email",
-      name:"password",
-      name:"roleID",
+      email:"",
+      password:"",
+      roleID:"",
       token:sessionStorage.getItem("token"),
     }
   }
@@ -106,7 +109,12 @@ export default class Users extends React.PureComponent {
           <div style={env}>
             {this.state.users.map((user, index) => (
               <div>
-                <p>{user.name}</p>
+                <p>
+                  {user.id}{user.name}
+                  <Link to={`/suser/${user.id}`}><AddIcon color="#99999" hoverColor="rgba(20,192,11,1)"/></Link>
+                  <EditIcon color="#99999" hoverColor="rgba(20,192,11,1)" onTouchTap={()=> this.handleNav("/")}/>
+                  <DeleteIcon color="#99999" hoverColor="rgba(20,192,11,1)" onTouchTap={()=> this.handleNav("/")}/>
+                </p>
               </div>
             ))}
           </div>

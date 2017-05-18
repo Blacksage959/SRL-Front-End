@@ -8,6 +8,9 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import FlatButton from 'material-ui/FlatButton';
 import {Link} from "react-router";
+import EditIcon from 'material-ui/svg-icons/image/edit';
+import AddIcon from 'material-ui/svg-icons/content/add';
+import DeleteIcon from 'material-ui/svg-icons/action/delete';
 
 export default class Roles extends React.PureComponent {
 
@@ -31,7 +34,6 @@ constructor(props){
       return response.json();
     })
     .then(function(json){
-      console.log(json);
       this.setState({
         roles:json
       })
@@ -103,7 +105,12 @@ constructor(props){
           <div>
             {this.state.roles.map((role, index) => (
               <div>
-                <p>{role.id}{role.name}</p>
+                <p>
+                  {role.id}{role.name}
+                  <Link to={`/srole/${role.id}`}><AddIcon color="#99999" hoverColor="rgba(20,192,11,1)"/></Link>
+                  <Link to={`/uprole/${role.id}`}><EditIcon color="#99999" hoverColor="rgba(20,192,11,1)"/></Link>
+                  <DeleteIcon color="#99999" hoverColor="rgba(20,192,11,1)" onTouchTap={()=> this.handleNav("/")}/>
+                </p>
               </div>
             ))}
           </div>
