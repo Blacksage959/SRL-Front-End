@@ -31,8 +31,8 @@ componentWillMount(){
       <div>
         <Helmet title="SRole" meta={[ { name: 'description', content: 'Description of SRole' }]}/>
 
-      {this.state.role.id}
-      {this.state.role.name}
+      {this.state.role.id}<br/>
+      {this.state.role.name}<br/>
 
       </div>
     );

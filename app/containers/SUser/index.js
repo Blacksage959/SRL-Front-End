@@ -12,13 +12,14 @@ export default class SUser extends React.PureComponent {
   constructor(props){
   super(props);
   this.state ={
-    user:""
+    user:"",
+    token:sessionStorage.getItem("token"),
    }
   }
 
 componentWillMount(){
 
-  fetch("http://localhost:8000/api/showUser/" + this.props.params.id)
+  fetch("http://localhost:8000/api/showUser/" + this.props.params.id + "?token=" + this.state.token)
     .then(function(response){
       return response.json();
     })
@@ -31,10 +32,22 @@ componentWillMount(){
 
 
   render() {
+    const row={
+      height:"auto",
+      width:"auto",
+
+
+    }
     return (
       <div>
         <Helmet title="SUser" meta={[ { name: 'description', content: 'Description of SUser' }]}/>
-        {this.state.user.username}
+
+
+        {this.state.user.id}<br/>
+        {this.state.user.name}<br/>
+        {this.state.user.email}<br/>
+        {this.state.user.roleID}<br/>
+
 
       </div>
     );

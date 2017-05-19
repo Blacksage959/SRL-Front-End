@@ -38,8 +38,13 @@ componentWillMount(){
     return (
       <div>
         <Helmet title="SProd" meta={[ { name: 'description', content: 'Description of SProd' }]}/>
-      {this.state.product.id}
-      {this.state.product.name}
+      {this.state.product.id}<br/>
+      {this.state.product.name}<br/>
+      {this.state.product.images}<br/>
+      {this.state.product.price}<br/>
+      {this.state.product.description}<br/>
+      {this.state.product.categoryID}<br/>
+      {this.state.product.availability}<br/>
 
       </div>
     );
