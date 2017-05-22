@@ -175,6 +175,15 @@ export default function createRoutes() {
                    .catch(errorLoading);
                },
               },
+              {
+               path: '/uprole/:id',
+               name: 'uprole',
+               getComponent(nextState, comMod) {
+                 import('containers/UpRole')
+                   .then(loadModule(comMod))
+                   .catch(errorLoading);
+               },
+              },
 
 
 
