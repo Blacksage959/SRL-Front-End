@@ -6,6 +6,8 @@ import FlatButton from 'material-ui/FlatButton';
 import {Link} from "react-router";
 import EditIcon from 'material-ui/svg-icons/image/edit';
 import DeleteIcon from 'material-ui/svg-icons/action/delete';
+import Dialog from 'material-ui/Dialog';
+import RaisedButton from 'material-ui/RaisedButton';
 
 export default class SCat extends React.PureComponent {
 
@@ -30,12 +32,50 @@ componentWillMount(){
     }.bind(this))
   }
 
+
+
+  deleteCategory = () => {
+    var _this=this;
+    fetch("http://localhost:8000/api/deleteCategory/" + this.props.params.id + "?token=" + this.state.token,{
+      method:"post"
+    })
+    .then(function(response){
+      return response.json();
+    })
+
+    .then(function(json){
+       alert("Category deleted.");
+       _this.handleClose();
+     })
+  }
+
+  state={
+    open: false,
+  };
+
+  handleOpen = () => {
+    this.setState({open: true});
+  };
+
+  handleClose = () => {
+    this.setState({open: false});
+
+  };
+
+
+
   handleNav = (location) => {
     this.context.router.push(location);
   }
 
 
   render() {
+
+    const actions=[
+      <FlatButton label="Cancel" primary={true} onTouchTap={this.handleClose}/>,
+      <FlatButton label="Delete" primary={true} onTouchTap={()=>this.deleteCategory()}/>,
+    ];
+
 
     const logoBttn={
       height:"auto",
@@ -59,15 +99,19 @@ componentWillMount(){
         <Helmet title="SCat" meta={[ { name: 'description', content: 'Description of SCat' }]}/>
           <p><FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/categories")}> SHOW CATEGORY- </FlatButton></p>
 
-            <div>
-            <EditIcon color="#99999" hoverColor="rgba(20,192,11,1)"/>
-            <DeleteIcon color="#99999" hoverColor="rgba(20,192,11,1)"/>
-            </div>
+            <RaisedButton onTouchTap={this.handleOpen}><EditIcon/>Edit</RaisedButton>
+            <RaisedButton onTouchTap={this.handleOpen}><DeleteIcon/>Delete</RaisedButton>
+            <Dialog actions={actions} modal={false} open={this.state.open} onRequestClose={this.handleClose}>
+              Delete this Category?
+            </Dialog>
+
 
         <div style={p}>
         <p> Category ID:{this.state.category.id}</p><br/>
         <p> Name:{this.state.category.name}</p><br/>
         </div>
+
+
 
       </div>
     );

@@ -15,6 +15,7 @@ export default class NCat extends React.PureComponent {
   super(props);
   this.state ={
     name:"",
+    token:sessionStorage.getItem("token"),
 
    }
   }
@@ -31,7 +32,7 @@ export default class NCat extends React.PureComponent {
     data.append("name",this.state.name);
 
 
-    fetch("http://localhost:8000/api/storeCategory",{
+    fetch("http://localhost:8000/api/storeCategory" + "?token=" + this.state.token,{
       method:"post",
       body:data
 

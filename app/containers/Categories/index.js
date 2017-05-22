@@ -11,6 +11,8 @@ import {Link} from "react-router";
 import EditIcon from 'material-ui/svg-icons/image/edit';
 import AddIcon from 'material-ui/svg-icons/content/add';
 import DeleteIcon from 'material-ui/svg-icons/action/delete';
+import Dialog from 'material-ui/Dialog';
+import RaisedButton from 'material-ui/RaisedButton';
 
 export default class Categories extends React.PureComponent {
 
@@ -42,11 +44,48 @@ export default class Categories extends React.PureComponent {
 
   }
 
+
+  deleteCategory = () => {
+    var _this=this;
+    fetch("http://localhost:8000/api/deleteCategory/" + this.props.params.id + "?token=" + this.state.token,{
+      method:"post"
+    })
+    .then(function(response){
+      return response.json();
+    })
+
+    .then(function(json){
+       alert("Category deleted.");
+       _this.handleClose();
+     })
+  }
+
+
+  state={
+    open: false,
+  };
+
+  handleOpen = () => {
+    this.setState({open: true});
+  };
+
+  handleClose = () => {
+    this.setState({open: false});
+
+  };
+
+
+
   handleNav = (location) => {
     this.context.router.push(location);
   }
 
   render() {
+
+    const actions=[
+      <FlatButton label="Cancel" primary={true} onTouchTap={this.handleClose}/>,
+      <FlatButton label="Delete" primary={true} onTouchTap={()=>this.deleteCategory()}/>,
+    ];
     const env={
       height:"100%",
       width:"100%",
@@ -110,8 +149,9 @@ export default class Categories extends React.PureComponent {
                 <p>
                   {category.id}{category.name}
                   <Link to={`/scat/${category.id}`}><AddIcon color="#99999" hoverColor="rgba(20,192,11,1)"/></Link>
-                  <Link to={`/upcat/${category.id}`}><EditIcon color="#99999" hoverColor="rgba(20,192,11,1)"/></Link>
-                  <DeleteIcon color="#99999" hoverColor="rgba(20,192,11,1)"/>
+                  
+
+
                 </p>
               </div>
             ))}

@@ -20,6 +20,7 @@ export default class NProd extends React.PureComponent {
     description:"",
     categoryID:"",
     availability:"",
+    token:sessionStorage.getItem("token"),
     }
   }
 
@@ -81,7 +82,7 @@ export default class NProd extends React.PureComponent {
     data.append("availability",this.state.availability);
 
 
-    fetch("http://localhost:8000/api/storeProduct",{
+    fetch("http://localhost:8000/api/storeProduct" + "?token=" + this.state.token,{
       method:"post",
       body:data
 

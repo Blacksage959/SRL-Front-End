@@ -16,7 +16,7 @@ export default class NRole extends React.PureComponent {
   super(props);
   this.state ={
     name:"",
-
+    token:sessionStorage.getItem("token"),
    }
   }
 
@@ -32,7 +32,7 @@ export default class NRole extends React.PureComponent {
     data.append("name",this.state.name);
 
 
-    fetch("http://localhost:8000/api/storeRole",{
+    fetch("http://localhost:8000/api/storeRole" + "?token=" + this.state.token ,{
       method:"post",
       body:data
 

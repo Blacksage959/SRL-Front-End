@@ -112,8 +112,7 @@ export default class Users extends React.PureComponent {
                 <p>
                   {user.id}{user.name}
                   <Link to={`/suser/${user.id}`}><AddIcon color="#99999" hoverColor="rgba(20,192,11,1)"/></Link>
-                  <EditIcon color="#99999" hoverColor="rgba(20,192,11,1)" onTouchTap={()=> this.handleNav("/")}/>
-                  <DeleteIcon color="#99999" hoverColor="rgba(20,192,11,1)" onTouchTap={()=> this.handleNav("/")}/>
+
                 </p>
               </div>
             ))}

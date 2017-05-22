@@ -107,9 +107,8 @@ constructor(props){
               <div>
                 <p>
                   {role.id}{role.name}
-                  <Link to={`/srole/${role.id}`}><AddIcon color="#99999" hoverColor="rgba(20,192,11,1)"/></Link>
-                  <Link to={`/uprole/${role.id}`}><EditIcon color="#99999" hoverColor="rgba(20,192,11,1)"/></Link>
-                  <DeleteIcon color="#99999" hoverColor="rgba(20,192,11,1)" onTouchTap={()=> this.handleNav("/")}/>
+                  <Link to={`/srole/${role.id}`}><AddIcon/></Link>
+
                 </p>
               </div>
             ))}

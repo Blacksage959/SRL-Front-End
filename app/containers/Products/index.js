@@ -112,8 +112,7 @@ export default class Products extends React.PureComponent {
                 <p>
                   {product.id}{product.name}
                   <Link to={`sprod/${product.id}`}><AddIcon color="#99999" hoverColor="rgba(20,192,11,1)"/></Link>
-                  <Link to={`sprod/${product.id}`}><EditIcon color="#99999" hoverColor="rgba(20,192,11,1)"/></Link>
-                  <DeleteIcon color="#99999" hoverColor="rgba(20,192,11,1)"/>
+
                 </p>
               </div>
             ))}
