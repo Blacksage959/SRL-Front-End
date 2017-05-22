@@ -19,8 +19,8 @@ export default class Home extends React.PureComponent {
 
         <Header/>
 /*
-
-    productts under categories, roles, ---- users under this role id ---- shipping info for orders
+---- shipping info for orders
+    productts under categories, roles, ---- users under this role id
     ---availability message instead of number----
      for find-- have search and filters----display img preview instead file -----
      ---home button in top corner srl head icon
@@ -28,6 +28,18 @@ export default class Home extends React.PureComponent {
      edit page display orig at top , form style below with default text
 
      delete prompts are you sure you want to delete
+
+
+
+     what if user wants to edit his page
+
+     can admin edit or delete user
+
+     should i make all edit pages
+
+
+
+     edit delete icon routes resolveed
 
 */
       </div>

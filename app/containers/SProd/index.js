@@ -143,7 +143,7 @@ componentWillMount(){
               </div>
 
               <div style={newFind}>
-                <FlatButton  style={bttn} onTouchTap={this.handleOpen}><EditIcon/>Edit</FlatButton >
+                <FlatButton style={bttn}><Link to={`/upprod/${this.state.product.id}`}><EditIcon/>Edit</Link ></FlatButton>
                 <FlatButton style={bttn} onTouchTap={this.handleOpen}><DeleteIcon/>Delete</FlatButton >
               </div>
 

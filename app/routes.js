@@ -136,6 +136,15 @@ export default function createRoutes() {
       .catch(errorLoading);
   },
  },
+ {
+  path: '/upprod/:id',
+  name: 'upprod',
+  getComponent(nextState, comMod) {
+    import('containers/UpProd')
+      .then(loadModule(comMod))
+      .catch(errorLoading);
+  },
+ },
 
 
 
@@ -225,7 +234,15 @@ export default function createRoutes() {
      .catch(errorLoading);
  },
 },
-
+{
+ path: '/upcat/:id',
+ name: 'upcat',
+ getComponent(nextState, comMod) {
+   import('containers/UpCat')
+     .then(loadModule(comMod))
+     .catch(errorLoading);
+ },
+},
 
 
                   {

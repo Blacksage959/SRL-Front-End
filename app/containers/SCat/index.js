@@ -77,6 +77,36 @@ componentWillMount(){
     ];
 
 
+    const env={
+      height:"100vh",
+      width:"100%",
+
+    }
+
+    const header={
+      width:"100%",
+      height:"15vh",
+      backgroundColor:"#999",
+    }
+    const logo={
+      height:"80%"
+    }
+
+
+    const bttn={
+      height:"auto",
+      width:"auto",
+      fontFamily:"Lato",
+      letterSpacing:".6em",
+      fontSize:"1em",
+      backgroundColor:"#555",
+      paddingLeft:"5px",
+      top:"-20px",
+      marginLeft:"5px",
+    }
+    const newFind={
+      height:"20%",
+    }
     const logoBttn={
       height:"auto",
       width:"auto",
@@ -97,13 +127,17 @@ componentWillMount(){
     return (
       <div>
         <Helmet title="SCat" meta={[ { name: 'description', content: 'Description of SCat' }]}/>
-          <p><FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/categories")}> SHOW CATEGORY- </FlatButton></p>
 
-            <RaisedButton onTouchTap={this.handleOpen}><EditIcon/>Edit</RaisedButton>
-            <RaisedButton onTouchTap={this.handleOpen}><DeleteIcon/>Delete</RaisedButton>
-            <Dialog actions={actions} modal={false} open={this.state.open} onRequestClose={this.handleClose}>
-              Delete this Category?
-            </Dialog>
+          <div style={env}>
+            <div style={header}>
+              <div style={logo}>
+                <p><FlatButton style={logoBttn} onTouchTap={()=> this.handleNav("/categories")}> SHOW CATEGORY- </FlatButton></p>
+              </div>
+
+              <div style={newFind}>
+                  <FlatButton style={bttn}><Link to={`/upcat/${this.state.category.id}`}><EditIcon/>Edit</Link ></FlatButton>
+                  <FlatButton onTouchTap={this.handleOpen}><DeleteIcon/>Delete</FlatButton>
+              </div>
 
 
         <div style={p}>
@@ -111,8 +145,13 @@ componentWillMount(){
         <p> Name:{this.state.category.name}</p><br/>
         </div>
 
+        <Dialog actions={actions} modal={false} open={this.state.open} onRequestClose={this.handleClose}>
+          Delete this Category?
+        </Dialog>
 
 
+      </div>
+      </div>
       </div>
     );
   }
