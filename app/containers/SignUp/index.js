@@ -6,6 +6,8 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 export default class SignUp extends React.PureComponent {
 
@@ -81,7 +83,7 @@ export default class SignUp extends React.PureComponent {
     return (
       <div>
         <Helmet title="SignUp" meta={[ { name: 'description', content: 'Description of SignUp' }]}/>
-
+<Header/>
       <div>
         <div>
           <h1>sign up</h1>
@@ -91,7 +93,7 @@ export default class SignUp extends React.PureComponent {
           <input style={formBoxColor} onTouchTap={this.signup} type="submit"/>
         </div>
       </div>
-
+<Footer/>
       </div>
     );
   }

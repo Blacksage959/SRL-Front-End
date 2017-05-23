@@ -110,6 +110,15 @@ export default function createRoutes() {
    },
  },
  {
+  path: '/allproducts',
+  name: 'allproducts',
+  getComponent(nextState, comMod) {
+    import('containers/AllProducts')
+      .then(loadModule(comMod))
+      .catch(errorLoading);
+  },
+ },
+  {
   path: '/fprod',
   name: 'findprod',
   getComponent(nextState, comMod) {
@@ -243,6 +252,15 @@ export default function createRoutes() {
      .catch(errorLoading);
  },
 },
+{
+ path: '/showcat/:id',
+ name: 'showcat',
+ getComponent(nextState, comMod) {
+   import('containers/ShowCat')
+     .then(loadModule(comMod))
+     .catch(errorLoading);
+ },
+},
 
 
                   {
@@ -266,12 +284,58 @@ export default function createRoutes() {
 
 
 
+{
+ path: '/shoppingcart',
+ name: 'shoppingcart',
+ getComponent(nextState, comMod) {
+   import('containers/ShoppingCart')
+     .then(loadModule(comMod))
+     .catch(errorLoading);
+ },
+},
 
 
+{
+ path: '/aboutsrl',
+ name: 'aboutsrl',
+ getComponent(nextState, comMod) {
+   import('containers/AboutSrl')
+     .then(loadModule(comMod))
+     .catch(errorLoading);
+ },
+},
 
 
+{
+ path: '/education',
+ name: 'education',
+ getComponent(nextState, comMod) {
+   import('containers/Education')
+     .then(loadModule(comMod))
+     .catch(errorLoading);
+ },
+},
+{
+ path: '/myprofile',
+ name: 'myprofile',
+ getComponent(nextState, comMod) {
+   import('containers/MyProfile')
+     .then(loadModule(comMod))
+     .catch(errorLoading);
+ },
+},
+{
+ path: '/contact',
+ name: 'contact',
+ getComponent(nextState, comMod) {
+   import('containers/Contact')
+     .then(loadModule(comMod))
+     .catch(errorLoading);
+ },
+},
 
-            {
+
+                  {
                    path: '*',
                    name: 'notfound',
                    getComponent(nextState, comMod) {

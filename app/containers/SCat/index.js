@@ -136,7 +136,7 @@ componentWillMount(){
 
               <div style={newFind}>
                   <FlatButton style={bttn}><Link to={`/upcat/${this.state.category.id}`}><EditIcon/>Edit</Link ></FlatButton>
-                  <FlatButton onTouchTap={this.handleOpen}><DeleteIcon/>Delete</FlatButton>
+                  <FlatButton style={bttn} onTouchTap={this.handleOpen}><DeleteIcon/>Delete</FlatButton>
               </div>
 
 

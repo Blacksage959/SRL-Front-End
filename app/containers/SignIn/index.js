@@ -6,6 +6,8 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 export default class SignIn extends React.PureComponent {
 
@@ -76,14 +78,14 @@ export default class SignIn extends React.PureComponent {
     return (
       <div>
         <Helmet title="SignIn" meta={[ { name: 'description', content: 'Description of SignIn' }]}/>
-
+  <Header/>
           <div>
             <h1>sign in</h1>
             <input style={formBoxColor} onChange={this.handleEmail}  type="text" placeholder="Email"/>
             <input style={formBoxColor} onChange={this.handlePassword}  type="text" placeholder="Password"/>
             <input style={formBoxColor} onTouchTap={this.signin} type="submit"/>
           </div>
-
+<Footer/>
       </div>
     );
   }

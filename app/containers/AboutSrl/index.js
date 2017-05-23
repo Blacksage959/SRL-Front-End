@@ -1,17 +1,17 @@
 /*
  *
- * Eprod
+ * AboutSrl
  *
  */
 
 import React from 'react';
 import Helmet from 'react-helmet';
 
-export default class Eprod extends React.PureComponent {
+export default class AboutSrl extends React.PureComponent {
   render() {
     return (
       <div>
-        <Helmet title="Eprod" meta={[ { name: 'description', content: 'Description of Eprod' }]}/>
+        <Helmet title="AboutSrl" meta={[ { name: 'description', content: 'Description of AboutSrl' }]}/>
 
       //Remove this line and you can start writing your code here.
       </div>

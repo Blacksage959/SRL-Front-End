@@ -7,9 +7,12 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import Header from 'components/Header';
+import HomeContent from 'components/HomeContent';
+import HomeSales from 'components/HomeSales';
 import Edit from 'material-ui/svg-icons/image/edit';
 import Add from 'material-ui/svg-icons/content/add';
 import Delete from 'material-ui/svg-icons/action/delete';
+import Footer from 'components/Footer';
 
 export default class Home extends React.PureComponent {
   render() {
@@ -18,6 +21,9 @@ export default class Home extends React.PureComponent {
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
 
         <Header/>
+        <HomeContent/>
+        <HomeSales/>
+        <Footer/>
 /*
 ---- shipping info for orders
     productts under categories, roles, ---- users under this role id
@@ -40,6 +46,28 @@ export default class Home extends React.PureComponent {
 
 
      edit delete icon routes resolveed
+
+
+
+
+     Name --- logo/homebttn
+     robots clashing picture
+     simple message + sign up buttn
+     row of hor scrollable kits, bots, gear, just 3 rows
+     content
+
+
+
+     Scrolla ble have NAME + for link to more
+     cart for Items
+     chackout when click cart
+     chaekcout page links with shipping api
+     every item has add to cart button that drops down and show var quantity
+
+
+
+
+
 
 */
       </div>
