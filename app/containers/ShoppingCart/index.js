@@ -13,7 +13,7 @@ export default class ShoppingCart extends React.PureComponent {
       <div>
         <Helmet title="ShoppingCart" meta={[ { name: 'description', content: 'Description of ShoppingCart' }]}/>
 
-      //Remove this line and you can start writing your code here.
+    <h1>Shopping Cart</h1>
       </div>
     );
   }

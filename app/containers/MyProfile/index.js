@@ -13,7 +13,8 @@ export default class MyProfile extends React.PureComponent {
       <div>
         <Helmet title="MyProfile" meta={[ { name: 'description', content: 'Description of MyProfile' }]}/>
 
-      //Remove this line and you can start writing your code here.
+      <h1>My Profile</h1>
+      
       </div>
     );
   }

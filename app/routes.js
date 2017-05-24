@@ -146,6 +146,15 @@ export default function createRoutes() {
   },
  },
  {
+  path: '/showprod/:id',
+  name: 'showprod',
+  getComponent(nextState, comMod) {
+    import('containers/ShowProd')
+      .then(loadModule(comMod))
+      .catch(errorLoading);
+  },
+ },
+ {
   path: '/upprod/:id',
   name: 'upprod',
   getComponent(nextState, comMod) {
@@ -295,15 +304,15 @@ export default function createRoutes() {
 },
 
 
-{
- path: '/aboutsrl',
- name: 'aboutsrl',
- getComponent(nextState, comMod) {
-   import('containers/AboutSrl')
-     .then(loadModule(comMod))
-     .catch(errorLoading);
- },
-},
+              {
+                path: '/aboutsrl',
+                name: 'aboutsrl',
+               getComponent(nextState, comMod) {
+                  import('containers/AboutSrl')
+                  .then(loadModule(comMod))
+                  .catch(errorLoading);
+                },
+              },
 
 
 {
@@ -315,15 +324,19 @@ export default function createRoutes() {
      .catch(errorLoading);
  },
 },
-{
- path: '/myprofile',
- name: 'myprofile',
- getComponent(nextState, comMod) {
-   import('containers/MyProfile')
-     .then(loadModule(comMod))
-     .catch(errorLoading);
- },
-},
+
+
+              {
+                path: '/myprofile',
+                name: 'myprofile',
+                getComponent(nextState, comMod) {
+                  import('containers/MyProfile')
+                  .then(loadModule(comMod))
+                  .catch(errorLoading);
+                },
+              },
+
+
 {
  path: '/contact',
  name: 'contact',
@@ -333,6 +346,10 @@ export default function createRoutes() {
      .catch(errorLoading);
  },
 },
+
+
+
+
 
 
                   {

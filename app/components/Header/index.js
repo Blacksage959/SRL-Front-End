@@ -15,7 +15,6 @@ import ShoppingCartIcon from 'material-ui/svg-icons/action/shopping-cart';
 import Responsive from 'react-responsive';
 
 
-
 class Header extends React.PureComponent {
 
   handleNav = (location) => {
@@ -39,8 +38,13 @@ class Header extends React.PureComponent {
       height:"2vh",
       backgroundColor:"rgba(250,50,50,.9)",
       display:"flex",
-      textIndent:"25px",
+
       padding:"3%",
+      flexDirection:"row",
+      position:"fixed",
+      top:"0",
+      zIndex:"99999",
+
 
 
 
@@ -59,6 +63,10 @@ class Header extends React.PureComponent {
       display:"flex",
       textIndent:"5px",
       padding:"3%",
+      position:"fixed",
+      top:"0",
+      zIndex:"99999",
+
 
 
 
@@ -80,38 +88,73 @@ class Header extends React.PureComponent {
       color:"white",
       textDecoration:"none",
 
+
+    }
+    const HeaderTextB={
+      marginLeft:"10px",
+      justifyContent:"center",
+      marginTop:"-40px",
+      color:"white",
+      underline:"none",
+      fontSize:"5em",
+
     }
     const fRight={
       position:"absolute",
       right:"15px",
     }
+
+    const fRightB={
+      position:"absolute",
+      right:"100px",
+    }
+    const homeNav={
+      width:"10%",
+      position:"relative",
+      top:"20px",
+      display:"flex",
+      flexDirection:"row",
+
+
+    }
+    const block1={
+
+    }
+    const block={
+
+    }
+    const lastBlock={
+
+
+    }
     return (
       <div>
         <Responsive minDeviceWidth={660}>
           <div style={Cont}>
+            <Link to={"/"}><h3 style={HeaderTextB}>SumoRobotLeague</h3></Link>
 
-            <div style={pos}><FilterListIcon color="white" hoverColor="rgba(20,192,11,1)"
-            onTouchTap={this.handleToggle}/></div>
+              <nav style={homeNav}>
+                <FlatButton  style={block1}  onTouchTap={()=> this.handleNav("/aboutsrl")}>About SRL</FlatButton>
 
-          <Link to={"/"}><h3 style={HeaderText}>SumoRobotLeague</h3></Link>
+                <FlatButton  style={block}  onTouchTap={()=> this.handleNav("/allproducts")}>Products</FlatButton>
 
-          <Link to={"/shoppingcart"}><div style={fRight2}><ShoppingCartIcon color="white"/></div></Link>
+                <FlatButton  style={block}  onTouchTap={()=> this.handleNav("/education")}>Education</FlatButton>
 
-            <Drawer
-              docked={false}
-              width={200}
-              containerStyle={{background:"linear-gradient( rgba(250,200,200,1),rgba(255,255,255,.2))"}}
-              open={this.state.open}
-              onRequestChange={(open) => this.setState({open})}>
+                <FlatButton  style={block}  onTouchTap={()=> this.handleNav("/gallery")}>Gallery</FlatButton>
 
-              <MenuItem onTouchTap={this.handleClose} primaryText="SIGN IN" containerElement={<Link to="/signin"></Link>}/>
-              <MenuItem onTouchTap={this.handleClose} primaryText="Sign Up" containerElement={<Link to="/signup"></Link>}/>
-              <MenuItem onTouchTap={this.handleClose} primaryText="About SRL" containerElement={<Link to="/aboutsrl"></Link>}/>
-              <MenuItem onTouchTap={this.handleClose} primaryText="Products" containerElement={<Link to="/allproducts"></Link>}/>
-              <MenuItem onTouchTap={this.handleClose} primaryText="Education" containerElement={<Link to="/education"></Link>}/>
-              <MenuItem onTouchTap={this.handleClose} primaryText="Contact" containerElement={<Link to="/contact"></Link>}/>
+                <FlatButton  style={block}  onTouchTap={()=> this.handleNav("/myprofile")}>MyProfile</FlatButton>
 
-            </Drawer>
+                <FlatButton  style={block}  onTouchTap={()=> this.handleNav("/contact")}>Contact</FlatButton>
+
+                <FlatButton  style={block}  onTouchTap={()=> this.handleNav("/signin")}>SignIn</FlatButton>
+
+                <FlatButton  style={lastBlock}  onTouchTap={()=> this.handleNav("/signup")}>SignUp</FlatButton>
+
+              </nav>
+
+          <Link to={"/shoppingcart"}><div style={fRightB}><ShoppingCartIcon color="white"/></div></Link>
+
+
 
           </div>
         </Responsive>
