@@ -36,8 +36,16 @@ export default class AllProducts extends React.PureComponent {
   render() {
 
     const env={
-      height:"100vh",
+      height:"80vh",
       width:"100%",
+      marginTop:"30px",
+      padding:"5%",
+
+    }
+
+    const pushCont={
+      margin:"20px",
+      fontWeight:"bold",
 
     }
 
@@ -47,14 +55,15 @@ export default class AllProducts extends React.PureComponent {
         <Helmet title="AllProducts" meta={[ { name: 'description', content: 'Description of AllProducts' }]}/>
         <Header/>
 
-    <Link to={"/"}><h1>Categories -</h1></Link>
+
 
           <div style={env}>
+            <Link to={"/"}><h1>Categories -</h1></Link>
             {this.state.categories.map((category, index) => (
-              <p>
+              <div style={pushCont}>
                 {category.name}
                 <Link to={`/showcat/${category.id}`}><AddIcon/></Link>
-              </p>
+              </div>
           ))}
           </div>
           <Footer/>

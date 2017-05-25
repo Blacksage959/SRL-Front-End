@@ -90,12 +90,16 @@ export default class ShowCat extends React.PureComponent {
     const mid={
       height:"70%",
     }
+
+    const push={
+      marginTop:"50px"
+    }
     return (
       <div>
         <Helmet title="Robots" meta={[ { name: 'description', content: 'Description of Robots' }]}/>
         <Header/>
 
-          <div>
+          <div style={push}>
             <Link to={"/allproducts"}><h1>Back -</h1></Link>
             <div style={env}>
               {this.state.products.map((product, index) => (

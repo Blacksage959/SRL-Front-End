@@ -44,6 +44,7 @@ class HomeContent extends React.PureComponent {
       marginLeft:"10%",
       marginTop:"10%",
 
+
     }
 
     const mainContm={

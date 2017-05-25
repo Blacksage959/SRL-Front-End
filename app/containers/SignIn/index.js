@@ -53,6 +53,8 @@ export default class SignIn extends React.PureComponent {
       if(json.token !== false) {
         sessionStorage.setItem('token',json.token);
         alert("Welcome back.");
+        this.context.router.push("/");
+
       }
     else if(json.token === false){
       alert("Invalid Credentials");
@@ -89,4 +91,9 @@ export default class SignIn extends React.PureComponent {
       </div>
     );
   }
+}
+
+
+SignIn.contextTypes={
+  router:React.PropTypes.object
 }

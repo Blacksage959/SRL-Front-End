@@ -47,21 +47,31 @@ componentWillMount(){
       marginTop:"10%"
 
     }
+    const env={
+      heignt:"100%"
+    }
+
+    const imgConstraint={
+      height:"150px",
+      width:"250px",
+
+    }
 
     return (
       <div>
         <Helmet title="ShowProd" meta={[ { name: 'description', content: 'Description of ShowProd' }]}/>
-        <Header/>
+
+
+          <Header/>
         <div style={compress}>
-          <p style={p}>Product ID:{this.state.product.id}</p>
-          <p style={p}>Name:{this.state.product.name}</p>
-          <p style={p}>Images:{this.state.product.images}</p>
-          <p style={p}>Price:{this.state.product.price}</p>
+          <h1>{this.state.product.name}</h1>
+          <p style={p}>ID:{this.state.product.id}</p>
+          <p style={p}>Price:${this.state.product.price}</p>
+            <img style={imgConstraint} src={this.state.product.images}/>
           <p style={p}>Description:{this.state.product.description}</p>
           <p style={p}>Category ID:{this.state.product.categoryID}</p>
           <p style={p}>Availability:{this.state.product.availability}</p>
         </div>
-
         <Footer/>
       </div>
     );
